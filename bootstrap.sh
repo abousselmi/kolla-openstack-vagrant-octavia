@@ -60,6 +60,11 @@ log "Copy kolla inventory sample files to /home/$KOLLA_USERNAME"
 cp /usr/local/share/kolla-ansible/ansible/inventory/* /home/$KOLLA_USERNAME/
 
 log "Download octavia certificates generator"
-wget https://raw.githubusercontent.com/openstack/octavia/$OPENSTACK_VERSION/bin/create_certificates.sh -P /home/$KOLLA_USERNAME/ > /dev/null
+mkdir -p /etc/kolla/config/octavia/ \
+    && cd /etc/kolla/config/octavia/ \
+    && wget https://raw.githubusercontent.com/openstack/octavia/$OPENSTACK_VERSION/bin/create_certificates.sh > /dev/null \
+    && chmod +x create_certificates.sh \
+    && source create_certificates.sh . /etc/ssl/openssl.cnf \
+    && cp private/cakey.pem .
 
 log "End bootstrap"
