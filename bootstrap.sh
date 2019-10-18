@@ -15,9 +15,10 @@ log "Start bootstrap"
 log "Insall kolla dependencies. This may take few minutes (grab a coffe meanwhile)"
 
 log "Decalre environment variables"
-KOLLA_VERSION=8.0.0
-KOLLA_USERNAME=kolla
-KOLLA_PASSWORD=$KOLLA_USERNAME
+KOLLA_VERSION='8.0.0'
+KOLLA_USERNAME='kolla'
+KOLLA_PASSWORD='$KOLLA_USERNAME'
+OPENSTACK_VERSION='stable/stein'
 
 log "Install required packages and dependancies"
 export DEBIAN_FRONTEND=noninteractive 
@@ -57,5 +58,8 @@ cp -r /usr/local/share/kolla-ansible/etc_examples/kolla /etc/
 
 log "Copy kolla inventory sample files to /home/$KOLLA_USERNAME"
 cp /usr/local/share/kolla-ansible/ansible/inventory/* /home/$KOLLA_USERNAME/
+
+log "Download octavia certificates generator"
+wget https://raw.githubusercontent.com/openstack/octavia/$OPENSTACK_VERSION/bin/create_certificates.sh -P /home/$KOLLA_USERNAME/ > /dev/null
 
 log "End bootstrap"
