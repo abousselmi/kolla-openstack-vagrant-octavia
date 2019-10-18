@@ -35,4 +35,19 @@ sudo kolla-ansible -i inventory deploy
 sudo kolla-ansible -i inventory post-deploy
 ```
 
+## My box setup
+
+enp0s3 has 10.0.2.15		default virtualbox private network)
+enp0s8 has 192.168.100.10	a extra private network
+enp0s8 has 192.168.100.11	an extra NIC
+enp0s8 has 192.168.100.12	an extra NIC
+
+The `/etc/hosts` should be updated with the following:
+
+```sh
+10.0.2.15	kos
+192.168.100.10	kos
+```
+
+Finally, `/etc/resolv.conf` should be updated with 8.8.8.8 DNS.
 
