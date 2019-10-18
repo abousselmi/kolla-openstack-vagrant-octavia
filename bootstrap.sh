@@ -12,7 +12,7 @@ function logerr {
 log "Start bootstrap"
 
 ### kolla deps
-log "Insall kolla dependencies"
+log "Insall kolla dependencies. This may take few minutes (grab a coffe meanwhile)"
 
 log "Decalre environment variables"
 KOLLA_VERSION=8.0.0
@@ -52,7 +52,7 @@ mkdir -p /home/$KOLLA_USERNAME/.ssh
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P "" > /dev/null
 cat ~/.ssh/id_rsa.pub >> /home/$KOLLA_USERNAME/.ssh/authorized_keys
 
-log "Copy kolla globals and password sample files"
+log "Copy kolla globals and password sample files to /etc/kolla"
 cp -r /usr/local/share/kolla-ansible/etc_examples/kolla /etc/
 
 log "Copy kolla inventory sample files to /home/$KOLLA_USERNAME"
