@@ -40,8 +40,8 @@ sudo kolla-ansible -i inventory post-deploy
 ```sh
 enp0s3 has 10.0.2.15		default virtualbox private network
 enp0s8 has 192.168.100.10	a extra private network
-enp0s8 has 192.168.100.11	an extra NIC
-enp0s8 has 192.168.100.12	an extra NIC
+enp0s8 has 192.168.100.11	an extra NIC (you can remove it from Vagrantfile)
+enp0s8 has 192.168.100.12	an extra NIC (you can remove it from Vagrantfile)
 ```
 
 The `/etc/hosts` should be updated with the following:
