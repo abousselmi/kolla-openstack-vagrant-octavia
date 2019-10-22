@@ -51,6 +51,6 @@ The `/etc/hosts` should be updated with the following:
 192.168.100.10	kos
 ```
 
-Finally, `/etc/resolv.conf` should be updated with 8.8.8.8 DNS (or you
+Finally, `/etc/resolv.conf` should be updated with 8.8.8.8 DNS (or your
 "favorite" one eventually).
 
