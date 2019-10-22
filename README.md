@@ -52,5 +52,5 @@ The `/etc/hosts` should be updated with the following:
 ```
 
 Finally, `/etc/resolv.conf` should be updated with 8.8.8.8 DNS (or you
-`favorite` one eventually).
+"favorite" one eventually).
 
