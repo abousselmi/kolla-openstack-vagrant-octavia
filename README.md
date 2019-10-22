@@ -39,7 +39,7 @@ sudo kolla-ansible -i inventory post-deploy
 
 The VM created by this Vagrantfile has 16GiB of RAM and 4 vCPUs.
 
-In terms of networking, 4 NIC are created:
+In terms of networking, 4 vNICs are created:
 
 ```sh
 enp0s3 has 10.0.2.15		default virtualbox private network
