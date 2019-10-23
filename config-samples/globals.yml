@@ -1,11 +1,7 @@
 ---
-# Valid options are [ COPY_ONCE, COPY_ALWAYS ]
 config_strategy: "COPY_ALWAYS"
-# Valid options are ['centos', 'debian', 'oraclelinux', 'rhel', 'ubuntu']
 kolla_base_distro: "centos"
-# Valid options are [ binary, source ]
 kolla_install_type: "source"
-# Valid option is Docker repository tag
 openstack_release: "stein"
 
 # All-In-One -> enable_haproxy=no -> 'network_interface' IP
@@ -27,17 +23,4 @@ neutron_plugin_agent: "linuxbridge"
 openstack_region_name: "VagrantBox"
 
 enable_haproxy: "no"
-#enable_barbican: "no"
-enable_central_logging: "yes"
-#enable_neutron_dvr: "no"
-#enable_neutron_lbaas: "no"
 enable_octavia: "yes"
-#enable_openstack_core: "yes"
-
-##################
-# Barbican options
-##################
-# Valid options are [ simple_crypto, p11_crypto ]
-#barbican_crypto_plugin: "simple_crypto"
-#barbican_library_path: "/usr/lib/libCryptoki2_64.so"
-
